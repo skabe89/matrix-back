@@ -3,7 +3,8 @@ class GamesController < ApplicationController
 
   # GET /games
   def index
-    games = Game.order(score: :desc).limit(5)
+    # games = Game.order(score: :desc)
+    games = Game.all
     @games = Game.arr_to_json(games)
     render json: @games
   end
